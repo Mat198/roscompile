@@ -23,4 +23,9 @@ WORKDIR /root/tools_ws
 RUN source /opt/ros/noetic/setup.bash && catkin_make install && \
     echo "source /root/tools_ws/install/setup.bash" >> ~/.bashrc
 
+WORKDIR /root/ros1_ws/src
+COPY docker/entrypoint.sh /root/entrypoint.sh
+RUN sudo chmod 755 /root/entrypoint.sh
+ENTRYPOINT ["/root/entrypoint.sh"]
+
 CMD ["bash"]
