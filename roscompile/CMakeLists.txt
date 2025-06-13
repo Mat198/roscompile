@@ -35,6 +35,4 @@ catkin_install_python(PROGRAMS
                       scripts/noetic_migration
                       DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
-install(FILES data/cmake.ignore data/cmake_patterns.ignore data/package.ignore data/package_patterns.ignore
-        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/data
-)
+install(DIRECTORY data DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
