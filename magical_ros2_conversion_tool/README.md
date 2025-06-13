@@ -8,6 +8,18 @@ It is invoked by calling `rosrun magical_ros2_conversion_tool ros2_conversion` w
 
 Based on [the official Migration guide](https://index.ros.org/doc/ros2/Contributing/Migration-Guide/).
 
+## Docker usage
+
+The Magical ROS2 Conversion Tool can be used to convert the files in a given folder with a docker using the following instructions:
+
+> Every file will be **overwritten** so make sure you have an backup
+
+1. Clone the repository `git clone https://github.com/DLu/roscompile.git`
+2. Build the docker container: `cd roscompile && source docker/build.sh`
+3. Run the container: `source docker/run.sh ros1_workspace_src_path`
+
+You can also use the docker container to futher develop this tool. :)
+
 ## Warning
 Despite having magical in its name, this tool is not magic. In fact, your code is very likely to NOT compile after running this script. It is merely a blunt instrument for getting you part of the way to ROS2.
 
