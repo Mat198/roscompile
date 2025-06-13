@@ -324,6 +324,9 @@ class PackageXML:
     def remove_element(self, element):
         """Remove the given element AND the text element before it if it is just an indentation."""
         parent = element.parentNode
+        if not parent:
+            print('\tParent from element %s is empty' % (element.tagName))
+            return
         index = parent.childNodes.index(element)
         if index > 0:
             previous = parent.childNodes[index - 1]
